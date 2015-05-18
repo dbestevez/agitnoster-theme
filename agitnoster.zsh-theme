@@ -99,7 +99,7 @@ git_details() {
 
   if [[ $deleted -ne "0" ]]; then
       prompt_segment red white
-      echo -n " ${deleted}"
+      echo -n "- ${deleted}"
   fi
 
   if [[ $changed -ne "0" ]]; then
