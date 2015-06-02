@@ -81,7 +81,7 @@ git_details() {
   staged_files=`git diff --staged --name-status`
 
   changed=$(( `all_lines "$gitstatus"` - `count_lines "$gitstatus" U` - `count_lines "$gitstatus" D`))
-  conflicts=`count_lines "$staged_files" U`
+  conflict=`count_lines "$staged_files" U`
   deleted=$(( `all_lines "$gitstatus"` - `count_lines "$gitstatus" U` - `count_lines "$gitstatus" M` ))
   staged=$(( `all_lines "$staged_files"` - num_conflicts ))
   stashed=`git stash list | wc -l`
