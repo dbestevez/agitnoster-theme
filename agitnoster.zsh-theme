@@ -136,7 +136,7 @@ git_branch_diff() {
   fi
 
   if [[ `git remote 2>/dev/null | wc -l` -ne "0" ]]; then
-    revgit=`git rev-list --left-right ${remote_ref}...HEAD`
+    revgit=`git rev-list --left-right ${remote_ref}...HEAD 2>/dev/null`
     revs=`all_lines "$revgit"`
     ahead=`count_lines "$revgit" "^>"`
     behind=$(( revs - ahead ))
